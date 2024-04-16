@@ -39,7 +39,7 @@ insert into t_users_roles (id_user, id_role) values
 	((select id from t_users u where u.email = 'axel.galvier@hotmail.fr'), 
 	(select id from t_roles r where r.role_code = 'MMBER')),
 	((select id from t_users u where u.email = 'jf@gm.com'), 
-	(select id from t_roles r where r.role_code = 'MODER'));
+	(select id from t_roles r where r.role_code = 'MMBER'));
 
 insert into t_users_exercises (id_user, id_exercise, assessment, realised_at) values
 	((select id from t_users u where u.email = 'jf@gm.com'), 
