@@ -34,8 +34,12 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+    	<dependency>
+	        <groupId>com.password4j</groupId>
+	        <artifactId>password4j</artifactId>
+	        <version>1.6.1</version>
+	    </dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
