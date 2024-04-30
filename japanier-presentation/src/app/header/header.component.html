@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" routerLink="/">Japanier</a>
   
-      <!-- Show this for logged out users -->
+      <!-- Show this for logged out users --
         <ul *ifAuthenticated="false" class="nav navbar-nav pull-xs-right">
             <li class="nav-item">
                 <a class="nav-link" routerLink="/"> Home </a>
@@ -25,7 +25,7 @@
             </li>
         </ul>
   
-      <!-- Show this for logged in users -->
+      <!- Show this for logged in users --
         <ul *ifAuthenticated="true" class="nav navbar-nav pull-xs-right">
             <li class="nav-item">
                 <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
@@ -48,6 +48,6 @@
                     Deconnexion
                 </a>
             </li>
-        </ul>
+        </ul>-->
     </div>
 </nav>
