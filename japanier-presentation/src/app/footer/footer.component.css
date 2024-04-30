@@ -1,5 +1,4 @@
 footer {
-    border: 2px solid red;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -15,7 +14,6 @@ footer {
 }
 
 img {
-    border: 2px solid red;
     display: flex;
     height: 100%;
 }
