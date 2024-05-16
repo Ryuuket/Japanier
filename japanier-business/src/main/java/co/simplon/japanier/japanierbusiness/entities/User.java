@@ -11,10 +11,8 @@ public class User extends BaseEntity {
     @Column(name = "password")
     private String password;
 
-    public User(String email, String password) {
-	super();
-	this.email = email;
-	this.password = password;
+    public User() {
+
     }
 
     public String getEmail() {
