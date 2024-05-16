@@ -38,7 +38,8 @@ create table t_exercises(
 create table t_roles(
 	id serial primary key,
 	role_code char (5) unique not null,
-	libelle varchar (16) not null
+	libelle varchar (16) not null,
+	is_default boolean not null
 );
 
 create table t_users_roles(

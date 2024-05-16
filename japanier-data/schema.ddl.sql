@@ -1,7 +1,7 @@
 delete from t_roles, t_sub_categories, t_categories;
 
-insert into t_roles (role_code, libelle) values 
-	('ADMIN', 'Administrateur'), ('MMBER', 'Member'), ('MODER', 'Modérateur');
+insert into t_roles (role_code, libelle, is_default) values 
+	('ADMIN', 'Administrateur', 0), ('MMBER', 'Member', 1);
 
 insert into t_categories (category_code, libelle) values
 	('ECRJP', 'Ecriture de la langue japonaise'), ('GRAJP', 'La grammaire japonaise');
