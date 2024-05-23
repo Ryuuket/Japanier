@@ -19,7 +19,7 @@ public class VideoLesson {
     @Column(name = "video_description")
     private String description;
 
-    @Column(name = "id_category")
+    @Column(name = "id_sub_category")
     private Integer category;
 
     public VideoLesson() {

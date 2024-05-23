@@ -27,17 +27,18 @@ public class UserService {
 	userRepository.save(user);
     }
 
-    public void login(CreateUser inputs) {
+    public String login(CreateUser inputs) {
 	User existingUser = userRepository.findOneByEmail(inputs.getEmail());
 	if (existingUser != null) {
-	    User user = new User();
-	    user.setId(existingUser.getId());
-	    user.setEmail(existingUser.getEmail());
-	    user.setPassword(existingUser.getPassword());
-	    securityHelper.matches(inputs.getPassword(), existingUser.getPassword());
-	    List<String> list = new ArrayList<String>();
-	    list.add("member");
-	    securityHelper.createToken(user.getEmail(), list);
+	    if (securityHelper.matches(inputs.getPassword(), existingUser.getPassword())) {
+		List<String> roles = new ArrayList<String>();
+		roles.add("member");
+		return securityHelper.createToken(existingUser.getEmail(), roles);
+	    } else {
+		return "Bad pw";
+	    }
+	} else {
+	    return "Not found";
 	}
     }
 }

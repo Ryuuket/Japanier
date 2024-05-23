@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.japanier.japanierbusiness.services.VideoLessonService;
 
 @RestController
-@RequestMapping("/videoLesson")
+@RequestMapping("/videoLessons")
 public class VideoLessonController {
     private VideoLessonService service;
 

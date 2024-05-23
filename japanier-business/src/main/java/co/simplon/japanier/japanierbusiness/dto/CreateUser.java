@@ -1,12 +1,17 @@
 package co.simplon.japanier.japanierbusiness.dto;
 
+import org.hibernate.validator.constraints.Length;
+
 import jakarta.validation.constraints.Pattern;
 
 public class CreateUser {
-    @Pattern(regexp = "^(?=.{1,64}@)[\\p{L}0-9_-]+(\\.[\\p{L}0-9_-]+)*@[^-][\\p{L}0-9-]+(\\.[\\p{L}0-9-]+)*(\\.[\\p{L}]{2,})$", message = "L'adresse mail doit être valide.")
+    @Pattern(regexp = "^[\\p{L}0-9._%+-]+@[\\p{L}0-9.-]+\\.[a-zA-Z]{2,}$", message = "L'adresse mail doit être valide.")
     private String email;
 
-    @Pattern(regexp = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$", message = "Le mot de passe contient au moins 8 caractères, dont une majuscule, une minuscule et un caractère spécial.")
+    @Length(min = 8, message = "Le mot de passe doit contenir au moins 8 caractères.")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z]).*$", message = "Le mot de passe doit contenir au moins une majuscule et une minuscule.")
+    @Pattern(regexp = "^(?=.*\\d).*$", message = "Le mot de passe doit contenir au moins un nombre.")
+    @Pattern(regexp = "^(?=.*[\\W_]).*$", message = "Le mot de passe doit contenir au moins un caractère spécial.")
     private String password;
 
     public CreateUser() {

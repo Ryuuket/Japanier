@@ -49,10 +49,11 @@ public class SecurityConfig {
 		.sessionManagement(management -> management
 			.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 		.authorizeHttpRequests(req -> req
-			.requestMatchers(HttpMethod.GET, "/lessons", "/exercises").permitAll())
+			.requestMatchers(HttpMethod.GET, "/videoLessons/default").permitAll())
 		.authorizeHttpRequests(req -> req
-			.requestMatchers(HttpMethod.POST, "/users/register", "/login").anonymous())
-		// Autres routes
+			.requestMatchers(HttpMethod.POST, "/users/register").anonymous())
+		.authorizeHttpRequests(req -> req
+			.requestMatchers(HttpMethod.POST, "/users/login").anonymous())
 		.authorizeHttpRequests(reqs -> reqs.anyRequest().fullyAuthenticated())
 		.oauth2ResourceServer(srv -> srv.jwt(Customizer.withDefaults()));
 	return http.build();

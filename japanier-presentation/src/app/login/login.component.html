@@ -5,11 +5,31 @@
         <label for="email">Email:
             <input type="email" id="email" name="email" placeholder="prenom.nom@gmail.com" formControlName="email" required>
         </label>
-        
+        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert">
+            <div *ngIf="email?.errors?.['required']">Email is required.</div>
+            <div *ngIf="email?.errors?.['pattern']">L'adresse mail doit être valide.</div>
+        </div>
         <label for="password">Mot de passe:
             <input type="password" id="password" name="password" placeholder="Mot de passe" formControlName="password" required>
         </label>
+        <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert">
+            <div *ngIf="password?.errors?.['required']">Password is required.</div>
+            <div *ngIf="password?.errors?.['length']">
+                Le mot de passe doit contenir au moins 8 caractères.
+            </div>
+            <div *ngIf="password?.errors?.['patternCase']">
+                Le mot de passe doit contenir au moins une majuscule et une minuscule.
+            </div>
+            <div *ngIf="password?.errors?.['patternNumber']">
+                Le mot de passe doit contenir au moins un nombre.
+            </div>
+            <div *ngIf="password?.errors?.['patternSpecial']">
+                Le mot de passe doit contenir au moins un caractère spécial.
+            </div>
+        </div>
         
-        <input class="submit-button" type="submit" value="Se connecter">
+        @if(loginForm.status){
+            <input class="submit-button" type="submit" value="Se connecter">
+        }
     </form>
 </section>
