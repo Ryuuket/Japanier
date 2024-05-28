@@ -17,14 +17,8 @@
             <div *ngIf="password?.errors?.['length']">
                 Le mot de passe doit contenir au moins 8 caractères.
             </div>
-            <div *ngIf="password?.errors?.['patternCase']">
-                Le mot de passe doit contenir au moins une majuscule et une minuscule.
-            </div>
-            <div *ngIf="password?.errors?.['patternNumber']">
-                Le mot de passe doit contenir au moins un nombre.
-            </div>
-            <div *ngIf="password?.errors?.['patternSpecial']">
-                Le mot de passe doit contenir au moins un caractère spécial.
+            <div *ngIf="password?.errors?.['pattern']">
+                Le mot de passe doit contenir au moins une majuscule, une minuscule, un caractère spécial et un nombre.
             </div>
         </div>
         

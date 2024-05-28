@@ -19,9 +19,6 @@ public class VideoLesson {
     @Column(name = "video_description")
     private String description;
 
-    @Column(name = "id_sub_category")
-    private Integer category;
-
     public VideoLesson() {
 
     }
@@ -56,13 +53,5 @@ public class VideoLesson {
 
     public void setId(Integer id) {
 	this.id = id;
-    }
-
-    public Integer getCategory() {
-	return category;
-    }
-
-    public void setCategory(Integer category) {
-	this.category = category;
     }
 }

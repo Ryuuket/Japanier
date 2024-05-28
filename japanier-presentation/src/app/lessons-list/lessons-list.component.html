@@ -1,0 +1,9 @@
+<h2>Cours vidéo</h2>
+<ul class="lessons">
+    <li *ngFor="let lesson of lessons">
+        <a href={{lesson.link}} class="lessonLink"> {{lesson.title}} </a>
+        <div class="description">
+            <p>{{lesson.description}}</p>    
+        </div>
+    </li>
+</ul>
