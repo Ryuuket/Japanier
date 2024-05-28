@@ -2,14 +2,9 @@ package co.simplon.japanier.japanierbusiness.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
 @Entity(name = "t_categories")
-public class Category {
-    @Id
-    @Column(name = "id")
-    private Integer id;
-
+public class Category extends BaseEntity {
     @Column(name = "category_code")
     private String code;
 
@@ -34,13 +29,5 @@ public class Category {
 
     public void setLibelle(String libelle) {
 	this.libelle = libelle;
-    }
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
     }
 }

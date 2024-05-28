@@ -2,14 +2,9 @@ package co.simplon.japanier.japanierbusiness.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
 @Entity(name = "t_video_lessons")
-public class VideoLesson {
-    @Id
-    @Column(name = "id")
-    private Integer id;
-
+public class VideoLesson extends BaseEntity {
     @Column(name = "title")
     private String title;
 
@@ -45,13 +40,5 @@ public class VideoLesson {
 
     public void setDescription(String description) {
 	this.description = description;
-    }
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
     }
 }

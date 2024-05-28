@@ -2,14 +2,9 @@ package co.simplon.japanier.japanierbusiness.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 
 @Entity(name = "t_sub_categories")
-public class SubCategory {
-    @Id
-    @Column(name = "id")
-    private Integer id;
-
+public class SubCategory extends BaseEntity {
     @Column(name = "id_category")
     private Integer category;
 
@@ -45,13 +40,5 @@ public class SubCategory {
 
     public void setCategory(Integer category) {
 	this.category = category;
-    }
-
-    public Integer getId() {
-	return id;
-    }
-
-    public void setId(Integer id) {
-	this.id = id;
     }
 }
