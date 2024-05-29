@@ -15,10 +15,8 @@ export class LessonsListComponent {
   constructor(private service : LessonsListService){}
 
   ngOnInit(){
-    console.log('yolo')
     this.service.getList().subscribe(lessons => {
       this.lessons = lessons;
-      console.log(lessons)
     })
   }
 }

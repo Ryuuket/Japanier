@@ -14,7 +14,6 @@ import { Login } from "./login.interface";
             'content-type': 'application/json',
             Accept: 'application/json'
         });
-        console.log(headers);
         return this.http.post<Login>(
             this.apiUrl, JSON.stringify({email, password}), {'headers': headers, withCredentials: true}
         ).subscribe({

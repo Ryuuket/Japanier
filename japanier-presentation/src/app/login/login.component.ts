@@ -25,7 +25,6 @@ export class LoginComponent {
   constructor(private service: LoginService, private formBuilder: FormBuilder){}
 
   onSubmit() {
-    console.log('Your form data : ', this.loginForm.value );
     this.loginForm.markAllAsTouched();
     const form = this.loginForm.value;
     if(!form.email || !form.password) {

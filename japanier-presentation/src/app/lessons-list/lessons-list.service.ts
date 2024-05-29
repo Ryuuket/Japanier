@@ -12,7 +12,6 @@ import { Lesson} from "./lessons-list.interface";
     constructor(private http: HttpClient) { }
 
      getList(){
-        console.log('get list')
         return this.http.get<Lesson[]>(
             this.apiUrl, { withCredentials: true }   
         )
